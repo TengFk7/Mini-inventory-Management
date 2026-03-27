@@ -17,10 +17,7 @@ export function Products() {
 
   return (
     <PageTransition>
-      <div className="grid-bg min-h-screen">
-        <div className="grid-wave-overlay" />
-
-        <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-6 py-8">
 
           {/* Header */}
           <motion.div
@@ -122,7 +119,6 @@ export function Products() {
             </motion.div>
           )}
         </div>
-      </div>
     </PageTransition>
   );
 }

@@ -11,13 +11,25 @@ function App() {
   return (
     <InventoryProvider>
       <div style={{ minHeight: '100vh', background: '#050c17' }}>
-        <Navbar />
-        <AnimatePresence mode="wait" initial={false}>
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/products" element={<Products />} />
-          </Routes>
-        </AnimatePresence>
+
+        {/* ── Persistent background (never fades on route change) ── */}
+        <div
+          className="grid-bg"
+          style={{ position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none' }}
+        />
+        <div className="grid-wave-overlay" />
+
+        {/* ── App shell (sits above background) ── */}
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <Navbar />
+          <AnimatePresence mode="wait" initial={false}>
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/products" element={<Products />} />
+            </Routes>
+          </AnimatePresence>
+        </div>
+
       </div>
     </InventoryProvider>
   );
