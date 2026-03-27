@@ -30,7 +30,7 @@ export function Products() {
             className="mb-8 flex items-end justify-between"
           >
             <div>
-              <h1 className="text-3xl font-bold text-white tracking-wide">Products</h1>
+              <h1 className="text-3xl font-bold text-white tracking-wide">Product </h1>
             </div>
 
             <motion.div
